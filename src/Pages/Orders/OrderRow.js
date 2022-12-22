@@ -14,7 +14,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
     <tr>
       <th>
         <label>
-          <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>
+          <button onClick={() => handleDelete(_id)} className='btn btn-error'>
             X
           </button>
         </label>
@@ -26,7 +26,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
               {orderService?.img && (
                 <img
                   src={orderService.img}
-                  alt='Avatar Tailwind CSS Component'
+                  alt='ServicePhoto'
                 />
               )}
             </div>
@@ -46,7 +46,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
       <th>
         <button
           onClick={() => handleStatusUpdate(_id)}
-          className='btn btn-ghost btn-xs'
+          className='btn btn-secondary btn-xs'
         >
           {status ? status : 'pending'}
         </button>

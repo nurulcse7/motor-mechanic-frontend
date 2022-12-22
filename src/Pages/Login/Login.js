@@ -38,8 +38,8 @@ const Login = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            // local storage is the easiest but not the best place to store jwt token
-            localStorage.setItem('genius-token', data.token);
+            // local storage is the easiest but not the best place to store jwt token 69-5
+            localStorage.setItem('mechanic-token', data.token);
             navigate(from, { replace: true });
           });
       })
