@@ -3,8 +3,10 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/signup.jpg';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
+  useTitle('SignUp')
   const { createUser } = useContext(AuthContext);
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -45,7 +47,7 @@ const SignUp = () => {
                 <span className='label-text'>Email</span>
               </label>
               <input
-                type='text'
+                type='email'
                 name='email'
                 placeholder='email'
                 className='input input-bordered'

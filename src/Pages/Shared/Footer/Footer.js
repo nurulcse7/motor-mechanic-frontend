@@ -1,12 +1,20 @@
 import React from 'react';
 import logo from '../../../assets/Logo1 (4).png';
+import footer from '../../../assets/images/footer.png';
 
 const Footer = () => {
     return (
-        <footer className="footer p-32 bg-base-200 text-white">
+        <footer className="footer p-24 bg-base-200 text-white"
+        style={{
+            background: `url(${footer})`,
+            backgroundSize: 'cover',
+          }}
+        >
             <div>
                 <img src={logo} alt="" />
-                <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
+                <p>Motor Mechanic Ltd.<br/>
+                Copyright © 2022 - by Motor Mechanic
+                </p>
             </div>
             <div>
                 <span className="footer-title">Services</span>

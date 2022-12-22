@@ -51,6 +51,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - React Hook Form (npm install react-hook-form) [Docs](https://react-hook-form.com/)
 - React-Hot-Toast (npm install react-hot-toast) [Docs](https://react-hot-toast.com/docs)
 - React Icons (npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
+- - EmailJS (npm install @emailjs/browser --save) 
 
 <!-- - React Query/ TanStack Query (npm i @tanstack/react-query) [Docs](https://tanstack.com/query/v4/docs/react/installation)
 - Axios (npm install axios) [Docs](https://axios-http.com/docs/intro) -->

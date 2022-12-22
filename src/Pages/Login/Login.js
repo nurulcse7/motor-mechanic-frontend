@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/images/login/login.jpg';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+  useTitle('Login')
     const { login } = useContext(AuthContext);
-  
+    const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || '/';
+
     const handleLogin = (event) => {
       event.preventDefault();
       const form = event.target;
@@ -13,12 +18,33 @@ const Login = () => {
       const password = form.password.value;
   
       login(email, password)
-        .then((result) => {
-          const user = result.user;
-          console.log(user);
+      .then((result) => {
+        const user = result.user;
+
+        const currentUser = {
+          email: user.email,
+        };
+
+        console.log(currentUser);
+
+        // get jwt token
+        fetch('http://localhost:5000/jwt', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(currentUser),
         })
-        .then((error) => console.log(error));
-    };
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // local storage is the easiest but not the best place to store jwt token
+            localStorage.setItem('genius-token', data.token);
+            navigate(from, { replace: true });
+          });
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className='hero w-full my-10 p-8'>
