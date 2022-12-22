@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Motor Mechanic
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Live link
 
-## Available Scripts
+`Live website` [Click here]()
+<!-- `client-side` [Click here]() -->
+<!-- `server-side` [Click here]() -->
 
-In the project directory, you can run:
+#### Code link 
 
-### `npm start`
+<!-- `GitHub` [Click here]() -->
+`client-side` [Click here]()
+`server-side` [Click here]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Description
+- In this project implement for Motor Mechanic. 
+- Customer/user can't take a service without login and login form also validation implemented, such as  full 
+name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&*).
+- Implement user email verification enable
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- This project frontend start with Create-react-app (ReactJS)
+- Design by Tailwindcss with daisyUI Component 
+- Backend start with NodeJS and ExpressJS
+- Connect server with MongoDB Database
+- Implement CRUD operation
+- Every section completed after code push on GitHub
 
-### `npm test`
+--- 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Features 
+- Custom Design 
+- SEO Friendly 
+- Mobile and PC, Tablet Responsive 
+- Doctors Management 
+- Customers Management 
+- Add to Cart / Book Appointment 
+- Payment Gateway 
+- Email services 
+<!-- - Shipping Management  -->
+<!-- - Invoice Printing  -->
 
-### `npm run build`
+#### Front-end Technology
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Firebase for authentication and deploy (hosting)
+- Tailwind CSS [Docs](https://tailwindcss.com/docs/guides/create-react-app)
+- daisyUI (npm i daisyui) [Docs](https://daisyui.com/docs/install/)
+- JavaScript [Docs]()
+- ReactJS (npx create-react-app)
+- React Router - (npm install react-router-dom) [Docs](https://reactrouter.com/en/main)
+- React-Context (AuthProvider)
+- React Hook Form (npm install react-hook-form) [Docs](https://react-hook-form.com/)
+- React-Hot-Toast (npm install react-hot-toast) [Docs](https://react-hot-toast.com/docs)
+- React Icons (npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- - React Query/ TanStack Query (npm i @tanstack/react-query) [Docs](https://tanstack.com/query/v4/docs/react/installation)
+- Axios (npm install axios) [Docs](https://axios-http.com/docs/intro) -->
+<!-- - AOS (npm install --save aos@next) [Docs](https://michalsnik.github.io/aos/)
+- sweetalert2-react-content (npm install --save sweetalert2 sweetalert2-react-content) [Docs](https://sweetalert2.github.io/recipe-gallery/) -->
+<!-- - TypewriterJS (npm i typewriter-effect) [Docs]() -->
+<!-- - StripeJS (npm install --save @stripe/react-stripe-js @stripe/stripe-js)
+- EmailJS (npm install @emailjs/browser --save)  -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Back-end Technology
 
-### `npm run eject`
+- Node.JS
+- Nodemon (npm install -g nodemon)
+  for server live when coding [Docs1](https://nodemon.io/) and [Docs2](https://www.npmjs.com/package/nodemon)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- MongoDB (Atlas, Cluster) for database [Docs](https://cloud.mongodb.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- - React Query/ TanStack Query (npm i @tanstack/react-query) [Docs](https://tanstack.com/query/v4/docs/react/installation) -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- - JWT (JSON Web Token) for authorization (npm i jsonwebtoken) [Docs](https://www.npmjs.com/package/jsonwebtoken)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Stripe for payment get way (npm install --save stripe) [Docs1](https://stripe.com/docs/payments/quickstart) [Docs2](https://stripe.com/docs/testing)
 
-## Learn More
+- Nodemailer (npm install nodemailer) [Docs](https://nodemailer.com/about/)
+- Mail gun () [Docs](https://app.mailgun.com/mg/dashboard) (https://www.npmjs.com/package/nodemailer-mailgun-transport) (npm i nodemailer-mailgun-transport) -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Deploy in Vercel (server) [Docs](https://vercel.com/dashboard)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
