@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/images/login/login.jpg';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
   useTitle('Login')
@@ -87,11 +88,13 @@ const Login = () => {
             </div>
           </form>
           <p className='text-center'>
-            New to Motor Mechanic{' '}
+            New to Motor Mechanic?{' '}
             <Link className='text-green-600 font-bold' to='/signup'>
               Sign Up
             </Link>{' '}
           </p>
+          <div className="divider">OR</div>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>
