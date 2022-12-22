@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import OrderRow from './OrderRow';
 
 const Orders = () => {
   useTitle('Orders')
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -13,11 +14,17 @@ const Orders = () => {
       headers: {
         authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
       }, //69-6 
+    }) 
+    .then((res) => {
+      if (res.status === 401 || res.status === 403) {
+        return logOut();
+      }
+      return res.json();
     })
-    
-      .then((res) => res.json())
-      .then((data) => setOrders(data));
-  }, [user?.email]);
+    .then((data) => {
+      setOrders(data);
+    });
+}, [user?.email, logOut]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm(
@@ -26,12 +33,15 @@ const Orders = () => {
     if (proceed) {
       fetch(`http://localhost:5000/orders/${id}`, {
         method: 'DELETE',
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            alert('deleted successfully');
+            toast.success('Booking deleted successfully');
             const remaining = orders.filter((odr) => odr._id !== id);
             setOrders(remaining);
           }
@@ -44,6 +54,7 @@ const Orders = () => {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
       },
       body: JSON.stringify({ status: 'Approved' }),
     })

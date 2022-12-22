@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    localStorage.removeItem('genius-token');
+    localStorage.removeItem('mechanic-token');
     return signOut(auth);
   };
 
