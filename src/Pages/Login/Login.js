@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.jpg';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-  const handleLogin = (event) => {
-    event.preventDefault();
-  };
+    const { login } = useContext(AuthContext);
+  
+    const handleLogin = (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value;
+      const password = form.password.value;
+  
+      login(email, password)
+        .then((result) => {
+          const user = result.user;
+          console.log(user);
+        })
+        .then((error) => console.log(error));
+    };
 
   return (
     <div className='hero w-full my-10 p-8'>
@@ -21,7 +34,7 @@ const Login = () => {
                 <span className='label-text'>Email</span>
               </label>
               <input
-                type='text'
+                type='email'
                 name='email'
                 placeholder='email'
                 className='input input-bordered'
@@ -32,7 +45,7 @@ const Login = () => {
                 <span className='label-text'>Password</span>
               </label>
               <input
-                type='text'
+                type='password'
                 name='password'
                 placeholder='password'
                 className='input input-bordered'
@@ -44,11 +57,7 @@ const Login = () => {
               </label>
             </div>
             <div className='form-control mt-6'>
-              <input
-                className='btn btn-secondary'
-                type='submit'
-                value='Login'
-              />
+              <input className='btn btn-secondary' type='submit' value='Login'/>
             </div>
           </form>
           <p className='text-center'>

@@ -1,21 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
-  const { img, price, title } = service;
+  const { _id, img, price, title } = service;
   return (
     <div className='card card-compact w-96 bg-base-100 shadow-xl'>
       <figure>
-        <img src={img} alt='Shoes' />
+        <img src={img} alt='Services' />
       </figure>
       <div className='card-body flex-row justify-evenly'>
         <div>
           <h2 className='card-title'>{title}</h2>
-          <p className='text-2xl text-green-600 font-semibold'>
-            Price: ${price}
-          </p>
+          <p className=' text-green-600 font-semibold'>Price: ${price}</p>
         </div>
-        <div className=''>
-          <button className='btn btn-secondary'>Booking Now</button>
+        <div className='card-actions justify-end'>
+          <Link to={`/checkout/${_id}`}>
+            <button className='btn btn-secondary'>Checkout</button>
+          </Link>
         </div>
       </div>
     </div>
