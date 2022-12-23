@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
 const Checkout = () => {
-  useTitle('Checkout')
+  useTitle('Checkout');
   const { _id, title, price, img } = useLoaderData();
   const { user } = useContext(AuthContext);
 
@@ -28,14 +28,14 @@ const Checkout = () => {
       phone,
       address,
       postcode,
-      currency
+      currency,
     };
 
-    fetch('http://localhost:5000/orders', {
+    fetch('https://motor-mechanic-backend.vercel.app/orders', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('mechanic-token')}`
+        authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
       },
       body: JSON.stringify(order),
     })
@@ -53,72 +53,80 @@ const Checkout = () => {
 
   return (
     <div className='p-8 m-8 my-12 shadow-2xl'>
-      <form onSubmit={handlePlaceOrder} className="grid gap-6 grid-cols-1 md:grid-cols-2">
+      <form
+        onSubmit={handlePlaceOrder}
+        className='grid gap-6 grid-cols-1 md:grid-cols-2'
+      >
         <div>
-        <h2 className='text-2xl font-bold'>
-          Your Booking:{' '}
-          <span className='text-secondary ml-2'>{title}</span>
-        </h2>
-        <h4 className='text-xl my-3 ml-4 font-bold'>Service charge: <span className='text-secondary ml-2'>${price}</span></h4>
-        <img src={img} className='w-fit rounded-3xl' alt="ServiceImage" />
+          <h2 className='text-2xl font-bold'>
+            Your Booking: <span className='text-secondary ml-2'>{title}</span>
+          </h2>
+          <h4 className='text-xl my-3 ml-4 font-bold'>
+            Service charge:{' '}
+            <span className='text-secondary ml-2'>${price}</span>
+          </h4>
+          <img src={img} className='w-fit rounded-3xl' alt='ServiceImage' />
         </div>
 
         <div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
             <input
-              name="firstName"
-              type="text"
-              placeholder="First Name"
-              className="input input-ghost w-full  input-bordered"
+              name='firstName'
+              type='text'
+              placeholder='First Name'
+              className='input input-ghost w-full  input-bordered'
               required
             />
             <input
-              name="lastName"
-              type="text"
-              placeholder="Last Name"
-              className="input input-ghost w-full  input-bordered"
+              name='lastName'
+              type='text'
+              placeholder='Last Name'
+              className='input input-ghost w-full  input-bordered'
             />
             <input
-              name="phone"
-              type="text"
-              placeholder="Your Phone"
-              className="input input-ghost w-full  input-bordered"
+              name='phone'
+              type='text'
+              placeholder='Your Phone'
+              className='input input-ghost w-full  input-bordered'
               required
             />
             <input
-              name="email"
-              type="text"
-              placeholder="Your email"
+              name='email'
+              type='text'
+              placeholder='Your email'
               defaultValue={user?.email}
-              className="input input-ghost w-full  input-bordered"
+              className='input input-ghost w-full  input-bordered'
               readOnly
             />
-          <select
-            defaultValue="BDT"
-            name="currency"
-            className="select select-bordered max-w-xs"
-          >
-            <option value="BDT">BDT</option>
-            <option value="USD">USD</option>
-          </select>
+            <select
+              defaultValue='BDT'
+              name='currency'
+              className='select select-bordered max-w-xs'
+            >
+              <option value='BDT'>BDT</option>
+              <option value='USD'>USD</option>
+            </select>
 
-          <input
-            type="text"
-            name="postcode"
-            placeholder="Your Postcode"
-            className="input input-ghost w-full  input-bordered"
-          />
+            <input
+              type='text'
+              name='postcode'
+              placeholder='Your Postcode'
+              className='input input-ghost w-full  input-bordered'
+            />
           </div>
 
-
           <textarea
-            name="address"
-            className="textarea textarea-bordered h-24 w-full my-5"
-            placeholder="Your Address"
+            name='address'
+            className='textarea textarea-bordered h-24 w-full my-5'
+            placeholder='Your Address'
             required
           ></textarea>
 
-          <input type="submit" value="Pay" className='btn bg-gradient-to-r from-accent to-secondary text-lg text-white capitalize w-full'/>
+          <input
+            type='submit'
+            value='Pay'
+            className='btn bg-gradient-to-r from-accent to-secondary text-lg text-white capitalize w-full'
+          />
         </div>
       </form>
     </div>
@@ -126,4 +134,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-

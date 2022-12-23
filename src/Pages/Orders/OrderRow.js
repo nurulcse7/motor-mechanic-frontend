@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
-  const { _id, serviceName, phone, customer, email, price, service, status } = order;
+  const { _id, serviceName, phone, customer, email, price, service, status } =
+    order;
   const [orderService, setOrderService] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${service}`)
+    fetch(`https://motor-mechanic-backend.vercel.app/services/${service}`)
       .then((res) => res.json())
       .then((data) => setOrderService(data));
   }, [service]);
@@ -24,10 +25,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
           <div className='avatar'>
             <div className='rounded w-24 h-24'>
               {orderService?.img && (
-                <img
-                  src={orderService.img}
-                  alt='ServicePhoto'
-                />
+                <img src={orderService.img} alt='ServicePhoto' />
               )}
             </div>
           </div>

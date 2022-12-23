@@ -4,7 +4,7 @@ export const setAuthToken = (user) => {
     email: user.email,
   };
   // get jwt token
-  fetch('http://localhost:5000/jwt', {
+  fetch('https://motor-mechanic-backend.vercel.app/jwt', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -19,4 +19,4 @@ export const setAuthToken = (user) => {
     });
 };
 
-// // 69-5_2 
+// // 69-5_2

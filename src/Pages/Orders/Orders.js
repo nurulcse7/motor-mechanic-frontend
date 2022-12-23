@@ -5,33 +5,36 @@ import useTitle from '../../hooks/useTitle';
 import OrderRow from './OrderRow';
 
 const Orders = () => {
-  useTitle('Orders')
+  useTitle('Orders');
   const { user, logOut } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
-      }, //69-6 
-    }) 
-    .then((res) => {
-      if (res.status === 401 || res.status === 403) {
-        return logOut();
+    fetch(
+      `https://motor-mechanic-backend.vercel.app/orders?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
+        }, //69-6
       }
-      return res.json();
-    })
-    .then((data) => {
-      setOrders(data);
-    });
-}, [user?.email, logOut]);
+    )
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          return logOut();
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setOrders(data);
+      });
+  }, [user?.email, logOut]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm(
       'Are you sure, you want to cancel this order'
     );
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://motor-mechanic-backend.vercel.app/orders/${id}`, {
         method: 'DELETE',
         headers: {
           authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
@@ -50,7 +53,7 @@ const Orders = () => {
   };
 
   const handleStatusUpdate = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://motor-mechanic-backend.vercel.app/orders/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -74,7 +77,9 @@ const Orders = () => {
 
   return (
     <div className='m-4 p-4 shadow-2xl mb-36'>
-      <h2 className='text-3xl font-bold text-center my-8'>You have <span className='text-secondary'>{orders.length}</span> Orders</h2>
+      <h2 className='text-3xl font-bold text-center my-8'>
+        You have <span className='text-secondary'>{orders.length}</span> Orders
+      </h2>
       <div className='overflow-x-auto w-full'>
         <table className='table w-full'>
           <thead>
@@ -103,4 +108,4 @@ const Orders = () => {
 };
 
 export default Orders;
-// 67-6, 7, 
+// 67-6, 7,

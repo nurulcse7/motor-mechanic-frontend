@@ -14,7 +14,9 @@ const PaymentSuccess = () => {
   const [order, setOrder] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/by-transaction-id/${transactionId}`)
+    fetch(
+      `https://motor-mechanic-backend.vercel.app/orders/by-transaction-id/${transactionId}`
+    )
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [transactionId]);

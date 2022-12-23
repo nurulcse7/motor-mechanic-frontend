@@ -12,7 +12,7 @@ const Services = () => {
   const searchRef = useRef();
   useEffect(() => {
     fetch(
-      `http://localhost:5000/services?search=${search}&order=${
+      `https://motor-mechanic-backend.vercel.app/services?search=${search}&order=${
         isAsc ? 'asc' : 'desc'
       }`
     )
@@ -41,7 +41,10 @@ const Services = () => {
             placeholder='Type here'
             className='input input-bordered input-primary w-1/4 max-w-xs'
           />
-          <button className='btn btn-primary mr-5 capitalize text-lg' onClick={handleSearch}>
+          <button
+            className='btn btn-primary mr-5 capitalize text-lg'
+            onClick={handleSearch}
+          >
             Search
           </button>
           <button
