@@ -1,5 +1,7 @@
 import Main from "../../Layout/Main";
 import Checkout from "../../Pages/Checkout/Checkout";
+import PaymentFail from "../../Pages/Checkout/PaymentFail";
+import PaymentSuccess from "../../Pages/Checkout/PaymentSuccess";
 import About from "../../Pages/Home/About/About";
 import Contact from "../../Pages/Home/Contact/Contact";
 import Home from "../../Pages/Home/Home/Home";
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
         {
           path: '/orders',
           element: <PrivateRoute><Orders></Orders></PrivateRoute>,
+        },
+        {
+          path: "/payment/success",
+          element: <PaymentSuccess />
+        },
+        {
+          path: "/payment/fail",
+          element: <PaymentFail />
         },
       ]
     }
