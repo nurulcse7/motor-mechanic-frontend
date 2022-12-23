@@ -6,7 +6,7 @@ import useTitle from '../../hooks/useTitle';
 
 const Checkout = () => {
   useTitle('Checkout')
-  const { _id, title, price } = useLoaderData();
+  const { _id, title, price, img } = useLoaderData();
   const { user } = useContext(AuthContext);
 
   const handlePlaceOrder = (event) => {
@@ -15,7 +15,9 @@ const Checkout = () => {
     const name = `${form.firstName.value} ${form.lastName.value}`;
     const email = user?.email || 'Unregistered';
     const phone = form.phone.value;
-    const message = form.message.value;
+    const address = form.address.value;
+    const postcode = form.postcode.value;
+    const currency = form.currency.value;
 
     const order = {
       service: _id,
@@ -24,7 +26,9 @@ const Checkout = () => {
       customer: name,
       email,
       phone,
-      message,
+      address,
+      postcode,
+      currency
     };
 
     fetch('http://localhost:5000/orders', {
@@ -42,62 +46,84 @@ const Checkout = () => {
           toast.success(`Your booking "${title}" is confirmed`);
           form.reset();
         }
+        // window.location.replace(data.url);
       })
       .catch((er) => console.error(er));
   };
 
   return (
-    <div className='m-12 p-12 shadow-2xl'>
-      <form onSubmit={handlePlaceOrder}>
-        <h2 className='text-3xl font-bold'>
-          You are about to order:{' '}
+    <div className='p-8 m-8 my-12 shadow-2xl'>
+      <form onSubmit={handlePlaceOrder} className="grid gap-6 grid-cols-1 md:grid-cols-2">
+        <div>
+        <h2 className='text-2xl font-bold'>
+          Your Booking:{' '}
           <span className='text-secondary ml-2'>{title}</span>
         </h2>
-        <h4 className='text-2xl my-3 ml-4 text-secondary'>Price: ${price}</h4>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-          <input
-            name='firstName'
-            type='text'
-            placeholder='First Name'
-            className='input input-ghost w-full  input-bordered'
-          />
-          <input
-            name='lastName'
-            type='text'
-            placeholder='Last Name'
-            className='input input-ghost w-full  input-bordered'
-          />
-          <input
-            name='phone'
-            type='text'
-            placeholder='Your Phone'
-            className='input input-ghost w-full  input-bordered'
-            required
-          />
-          <input
-            name='email'
-            type='text'
-            placeholder='Your email'
-            defaultValue={user?.email}
-            className='input input-ghost w-full  input-bordered'
-            readOnly
-          />
+        <h4 className='text-xl my-3 ml-4 font-bold'>Service charge: <span className='text-secondary ml-2'>${price}</span></h4>
+        <img src={img} className='w-fit rounded-3xl' alt="ServiceImage" />
         </div>
-        <textarea
-          name='message'
-          className='textarea textarea-bordered h-24 w-full my-5'
-          placeholder='Type here your message'
-          required
-        ></textarea>
 
-        <input
-          className='btn btn-secondary'
-          type='submit'
-          value='Place Your Order'
-        />
+        <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <input
+              name="firstName"
+              type="text"
+              placeholder="First Name"
+              className="input input-ghost w-full  input-bordered"
+              required
+            />
+            <input
+              name="lastName"
+              type="text"
+              placeholder="Last Name"
+              className="input input-ghost w-full  input-bordered"
+            />
+            <input
+              name="phone"
+              type="text"
+              placeholder="Your Phone"
+              className="input input-ghost w-full  input-bordered"
+              required
+            />
+            <input
+              name="email"
+              type="text"
+              placeholder="Your email"
+              defaultValue={user?.email}
+              className="input input-ghost w-full  input-bordered"
+              readOnly
+            />
+          <select
+            defaultValue="BDT"
+            name="currency"
+            className="select select-bordered max-w-xs"
+          >
+            <option value="BDT">BDT</option>
+            <option value="USD">USD</option>
+          </select>
+
+          <input
+            type="text"
+            name="postcode"
+            placeholder="Your Postcode"
+            className="input input-ghost w-full  input-bordered"
+          />
+          </div>
+
+
+          <textarea
+            name="address"
+            className="textarea textarea-bordered h-24 w-full my-5"
+            placeholder="Your Address"
+            required
+          ></textarea>
+
+          <input type="submit" value="Pay" className='btn bg-gradient-to-r from-accent to-secondary text-lg text-white capitalize w-full'/>
+        </div>
       </form>
     </div>
   );
 };
 
 export default Checkout;
+

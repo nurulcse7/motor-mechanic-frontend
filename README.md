@@ -65,7 +65,7 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 
 - MongoDB (Atlas, Cluster) for database [Docs](https://cloud.mongodb.com/)
 - JWT (JSON Web Token) for authorization (npm i jsonwebtoken) [Docs](https://www.npmjs.com/package/jsonwebtoken)
-
+- SSLCommerz (npm i sslcommerz-lts) [Docs](https://github.com/nurulcse7/SSLCommerz-NodeJS)
 - Deploy in Vercel (server) [Docs](https://vercel.com/dashboard)
 
 ---
