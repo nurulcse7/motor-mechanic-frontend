@@ -14,11 +14,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
   return (
     <tr>
       <th>
-        <label>
-          <button onClick={() => handleDelete(_id)} className='btn btn-error'>
-            X
-          </button>
-        </label>
+        <td>01</td>
       </th>
       <td>
         <div className='flex items-center space-x-3'>
@@ -48,6 +44,13 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
         >
           {status ? status : 'pending'}
         </button>
+      </th>
+      <th>
+        <label>
+          <button onClick={() => handleDelete(_id)} className='btn btn-error'>
+            X
+          </button>
+        </label>
       </th>
     </tr>
   );

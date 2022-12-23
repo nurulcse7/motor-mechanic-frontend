@@ -84,11 +84,12 @@ const Orders = () => {
         <table className='table w-full'>
           <thead>
             <tr>
-              <th>Action</th>
+              <th>No</th>
               <th>Name</th>
-              <th>Job</th>
+              <th>Booking Info</th>
               <th>Email</th>
               <th>Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
