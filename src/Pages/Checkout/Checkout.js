@@ -41,12 +41,12 @@ const Checkout = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.acknowledged) {
-          toast.success(`Your booking "${title}" is confirmed`);
-          form.reset();
-        }
-        // window.location.replace(data.url);
+        // console.log(data);
+        // if (data.acknowledged) {
+        //   toast.success(`Your booking "${title}" is confirmed`);
+        //   form.reset();
+        // }
+        window.location.replace(data.url);
       })
       .catch((er) => console.error(er));
   };
