@@ -3,41 +3,45 @@
 #### Live link
 
 `Live website` [Click here](https://motor-mechanic-com.web.app/)
+
 <!-- `client-side` [Click here](https://motor-mechanic-com.web.app/) -->
 <!-- `server-side` [Click here](https://motor-mechanic-backend.vercel.app/) -->
 
-#### Code link 
+#### Code link
 
 <!-- `GitHub` [Click here](https://github.com/nurulcse7/motor-mechanic-frontend) -->
+
 `client-side` [Click here](https://github.com/nurulcse7/motor-mechanic-frontend)
 `server-side` [Click here](https://github.com/nurulcse7/motor-mechanic-backend)
 
 ### Description
-- In this project implement for Motor Mechanic. 
-- Customer/user can't take a service without login and login form also validation implemented, such as  full 
-name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&*).
+
+- In this project implement for Motor Mechanic.
+- Customer/user can't take a service without login and login form also validation implemented, such as full
+  name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&\*).
 - Implement user email verification enable
 
 - This project frontend start with Create-react-app (ReactJS)
-- Design by Tailwindcss with daisyUI Component 
+- Design by Tailwindcss with daisyUI Component
 - Backend start with NodeJS and ExpressJS
 - Connect server with MongoDB Database
 - Implement CRUD operation
 - Every section completed after code push on GitHub
 
---- 
+---
 
-### Features 
-- Custom Design 
-- SEO Friendly 
-- Mobile and PC, Tablet Responsive 
-- Orders Management 
-- Customers Management 
-- Add to Cart / Book Appointment 
-- Payment Gateway 
-- Email services 
-<!-- - Shipping Management  -->
-<!-- - Invoice Printing  -->
+### Features
+
+- Custom Design
+- SEO Friendly
+- Mobile and PC, Tablet Responsive
+- Orders Management
+- Customers Management
+- Add to Cart / Book Appointment
+- Payment Gateway
+- Email services
+  <!-- - Shipping Management  -->
+  <!-- - Invoice Printing  -->
 
 #### Front-end Technology
 
@@ -51,15 +55,14 @@ name is required, password must be 6 characters, need a uppercase (CAPITAL) and 
 - React Hook Form (npm install react-hook-form) [Docs](https://react-hook-form.com/)
 - React-Hot-Toast (npm install react-hot-toast) [Docs](https://react-hot-toast.com/docs)
 - React Icons (npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
-- EmailJS (npm install @emailjs/browser --save) 
-
+- EmailJS (npm install @emailjs/browser --save)
 
 #### Back-end Technology
 
 - Node.JS
 - Express.JS
-- Cors 
-- dotenv 
+- Cors
+- dotenv
 - Nodemon (npm install -g nodemon)
   for server live when coding [Docs1](https://nodemon.io/) and [Docs2](https://www.npmjs.com/package/nodemon)
 

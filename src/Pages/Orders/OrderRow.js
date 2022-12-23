@@ -13,9 +13,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
 
   return (
     <tr>
-      <th>
-        <td>01</td>
-      </th>
+      <th>01</th>
       <td>
         <div className='flex items-center space-x-3'>
           <div className='avatar'>

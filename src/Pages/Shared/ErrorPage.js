@@ -10,7 +10,7 @@ export default function ErrorPage() {
       <div className='hero-overlay bg-opacity-60'></div>
       <div className='hero-content text-center text-neutral-content'>
         <div className='max-w-md'>
-          <img src={NotFound} className='rounded-full' alt='' />
+          <img src={NotFound} className='rounded-3xl' alt='NotFound' />
           <p className='my-6 text-lg'>
             Sorry, an unexpected error has occurred.
           </p>
@@ -18,7 +18,7 @@ export default function ErrorPage() {
             {error.statusText || error.message}
           </i>
           <br />
-          <button className='btn btn-primary mt-5 capitalize text-lg'>
+          <button className='btn bg-gradient-to-r from-accent to-secondary text-lg text-white capitalize w-full mt-6'>
             <Link to='/'>Back To Home</Link>
           </button>
         </div>
