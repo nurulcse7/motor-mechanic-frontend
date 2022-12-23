@@ -59,6 +59,14 @@ const Contact = () => {
           placeholder='Your address'
           className='input input-bordered input-accent w-full max-w-sm my-2'
         />
+        <label className='label text-lg mt-2'>Phone</label>
+        <input
+          type='text'
+          name='phone'
+          placeholder='Your phone number'
+          className='input input-bordered input-accent w-full max-w-sm my-2'
+          required
+        />
         <label className='label text-lg'>Type message</label>
         <textarea
           name='message'
