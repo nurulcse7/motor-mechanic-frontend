@@ -2,7 +2,7 @@
 
 #### Live link
 
-`Live website` [Click here](https://motor-mechanic-com.web.app/)
+`Live website` [Click here](https://motor-mechanic-com.web.app)
 
 <!-- `client-side` [Click here](https://motor-mechanic-com.web.app) -->
 <!-- `server-side` [Click here](https://motor-mechanic-backend.vercel.app) -->
@@ -16,7 +16,7 @@
 
 ### Description
 
-- In this project implement for Motor Mechanic.
+- In this project implement for Motor, cars servicing. 
 - Customer/user can't take a service without login and login form also validation implemented, such as full
   name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&\*).
 - Implement user email verification enable
@@ -40,8 +40,8 @@
 - Add to Cart / Book Appointment
 - Payment Gateway
 - Email services
-  <!-- - Shipping Management  -->
-  <!-- - Invoice Printing  -->
+- Invoice Printing 
+<!-- - Shipping Management  -->
 
 #### Front-end Technology
 
@@ -59,16 +59,19 @@
 
 #### Back-end Technology
 
-- Node.JS
-- Express.JS
-- Cors
-- dotenv
-- Nodemon (npm install -g nodemon)
+- Node.JS [Docs](https://nodejs.org/en/)
+- Express.JS [Docs](https://expressjs.com/)
+- Cors [Docs](https://www.npmjs.com/package/cors)
+- dotenv [Docs](https://www.npmjs.com/package/dotenv) 
+- Nodemon (npm install -g nodemon) [Docs]()
   for server live when coding [Docs1](https://nodemon.io/) and [Docs2](https://www.npmjs.com/package/nodemon)
 
 - MongoDB (Atlas, Cluster) for database [Docs](https://cloud.mongodb.com/)
 - JWT (JSON Web Token) for authorization (npm i jsonwebtoken) [Docs](https://www.npmjs.com/package/jsonwebtoken)
 - SSLCommerz (npm i sslcommerz-lts) [Docs](https://github.com/nurulcse7/SSLCommerz-NodeJS)
-- Deploy in Vercel (server) [Docs](https://vercel.com/dashboard)
+
+#### Deploy (Hosting)
+- Deploy frontend in Firebase (Client) [Docs](https://console.firebase.google.com/)
+- Deploy backend in Vercel (server) [Docs](https://vercel.com/dashboard)
 
 ---
