@@ -4,8 +4,8 @@
 
 `Live website` [Click here](https://motor-mechanic-com.web.app/)
 
-<!-- `client-side` [Click here](https://motor-mechanic-com.web.app/) -->
-<!-- `server-side` [Click here](https://motor-mechanic-backend.vercel.app/) -->
+<!-- `client-side` [Click here](https://motor-mechanic-com.web.app) -->
+<!-- `server-side` [Click here](https://motor-mechanic-backend.vercel.app) -->
 
 #### Code link
 

@@ -4,7 +4,7 @@ export const setAuthToken = (user) => {
     email: user.email,
   };
   // get jwt token
-  fetch('https://motor-mechanic-backend.vercel.app/jwt', {
+  fetch(`${process.env.REACT_APP_ApiUrl}/jwt`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',

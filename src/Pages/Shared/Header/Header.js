@@ -70,9 +70,9 @@ const Header = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to='/' className='btn btn-ghost capitalize '>
-          <img src={logo} alt='' />
-          <h1 className='text-3xl font-bold text-green-600 '>Motor Mechanic</h1>
+        <Link to='/' className='flex hover:bg-base-200 rounded-3xl p-2'>
+          <img src={logo} alt='Logo' />
+          <h1 className='text-3xl font-bold text-green-600 ml-2 mt-5'>Motor Mechanic</h1>
         </Link>
       </div>
       <div className='navbar-center hidden lg:flex'>

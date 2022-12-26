@@ -6,7 +6,7 @@ const OrderRow = ({ order, handleDelete, handleStatusUpdate }) => {
   const [orderService, setOrderService] = useState({});
 
   useEffect(() => {
-    fetch(`https://motor-mechanic-backend.vercel.app/services/${service}`)
+    fetch(`${process.env.REACT_APP_ApiUrl}/services/${service}`)
       .then((res) => res.json())
       .then((data) => setOrderService(data));
   }, [service]);

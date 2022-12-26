@@ -15,7 +15,7 @@ const PaymentSuccess = () => {
 
   useEffect(() => {
     fetch(
-      `https://motor-mechanic-backend.vercel.app/orders/by-transaction-id/${transactionId}`
+      `${process.env.REACT_APP_ApiUrl}/orders/by-transaction-id/${transactionId}`
     )
       .then((res) => res.json())
       .then((data) => setOrder(data));
@@ -23,7 +23,7 @@ const PaymentSuccess = () => {
   console.log(order);
 
   if (!order?._id) {
-    return <div>No order found</div>;
+    return <div className='m-12 p-12 text-center text-4xl text-secondary capitalize'>No order found</div>;
   }
   return (
     <div className='m-8 p-8 my-16'>

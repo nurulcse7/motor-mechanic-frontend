@@ -10,14 +10,11 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://motor-mechanic-backend.vercel.app/orders?email=${user?.email}`,
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
-        }, //69-6
-      }
-    )
+    fetch(`${process.env.REACT_APP_ApiUrl}/orders?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
+      }, //69-6
+    })
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logOut();
@@ -34,7 +31,7 @@ const Orders = () => {
       'Are you sure, you want to cancel this order'
     );
     if (proceed) {
-      fetch(`https://motor-mechanic-backend.vercel.app/orders/${id}`, {
+      fetch(`${process.env.REACT_APP_ApiUrl}/orders/${id}`, {
         method: 'DELETE',
         headers: {
           authorization: `Bearer ${localStorage.getItem('mechanic-token')}`,
@@ -44,7 +41,7 @@ const Orders = () => {
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            toast.success('Booking deleted successfully');
+            toast.success('Your booking was deleted successfully');
             const remaining = orders.filter((odr) => odr._id !== id);
             setOrders(remaining);
           }
@@ -53,7 +50,7 @@ const Orders = () => {
   };
 
   const handleStatusUpdate = (id) => {
-    fetch(`https://motor-mechanic-backend.vercel.app/orders/${id}`, {
+    fetch(`${process.env.REACT_APP_ApiUrl}/orders/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',

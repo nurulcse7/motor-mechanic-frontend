@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
@@ -12,7 +13,7 @@ const Services = () => {
   const searchRef = useRef();
   useEffect(() => {
     fetch(
-      `https://motor-mechanic-backend.vercel.app/services?search=${search}&order=${
+      `${process.env.REACT_APP_ApiUrl}/services?search=${search}&order=${
         isAsc ? 'asc' : 'desc'
       }`
     )
@@ -28,7 +29,7 @@ const Services = () => {
       <div className='text-center mb-4 shadow-2xl'>
         <p className='text-2xl font-bold text-green-600'>Services</p>
         <h2 className='text-4xl font-semibold'>Our Service Area</h2>
-        <p className='m-2 p-4'>
+        <p className='m-5 pl-12 pr-12 text-lg'>
           Use a calendar to schedule the dates you’ll want to share each topic.
           Consider the seasons and holidays, and set a regular schedule that
           works for you. We like to send newsletters on behalf of our clients
@@ -48,12 +49,17 @@ const Services = () => {
             Search
           </button>
           <button
-            className='btn btn-secondary tooltip tooltip-left capitalize text-lg'
+            className='btn btn-secondary tooltip tooltip-top capitalize text-lg'
             onClick={() => setIsAsc(!isAsc)}
-            data-tip='Show service as per price low/high'
+            data-tip='High/Low Price Toggle'
           >
             {isAsc ? 'desc' : 'asc'}
           </button>
+          <Link 
+             to='/' 
+             className='btn btn-primary ml-2 mr-2 capitalize text-lg '
+             title='See All Services'
+             >Refresh</Link>
         </div>
       </div>
       <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>

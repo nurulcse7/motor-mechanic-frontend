@@ -46,23 +46,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/checkout/:id',
-        element: (
-          <PrivateRoute>
-            <Checkout></Checkout>
-          </PrivateRoute>
-        ),
-        loader: ({ params }) =>
-          fetch(
-            `https://motor-mechanic-backend.vercel.app/services/${params.id}`
-          ),
+        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
+        loader: ({ params })=> fetch(`${process.env.REACT_APP_ApiUrl}/services/${params.id}`),
       },
       {
         path: '/orders',
-        element: (
-          <PrivateRoute>
-            <Orders></Orders>
-          </PrivateRoute>
-        ),
+        element: <PrivateRoute> <Orders/></PrivateRoute>,
       },
       {
         path: '/payment/success',

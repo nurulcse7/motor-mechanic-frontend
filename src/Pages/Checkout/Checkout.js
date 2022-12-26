@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { toast } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
@@ -31,7 +30,7 @@ const Checkout = () => {
       currency,
     };
 
-    fetch('https://motor-mechanic-backend.vercel.app/orders', {
+    fetch(`${process.env.REACT_APP_ApiUrl}/orders`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -75,7 +74,6 @@ const Checkout = () => {
               type='text'
               placeholder='First Name'
               className='input input-ghost w-full  input-bordered'
-              required
             />
             <input
               name='lastName'
@@ -88,7 +86,6 @@ const Checkout = () => {
               type='text'
               placeholder='Your Phone'
               className='input input-ghost w-full  input-bordered'
-              required
             />
             <input
               name='email'
@@ -119,12 +116,11 @@ const Checkout = () => {
             name='address'
             className='textarea textarea-bordered h-24 w-full my-5'
             placeholder='Your Address'
-            required
           ></textarea>
 
           <input
             type='submit'
-            value='Pay'
+            value='Pay Online'
             className='btn bg-gradient-to-r from-accent to-secondary text-lg text-white capitalize w-full'
           />
         </div>

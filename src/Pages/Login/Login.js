@@ -27,9 +27,9 @@ const Login = () => {
         };
 
         console.log(currentUser);
-
+        navigate(from, { replace: true });
         // get jwt token
-        fetch('https://motor-mechanic-backend.vercel.app/jwt', {
+        fetch(`${process.env.REACT_APP_ApiUrl}/jwt`, {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
@@ -44,7 +44,7 @@ const Login = () => {
             navigate(from, { replace: true });
           });
       })
-      .catch((error) => console.log(error));
+      // .catch((error) => console.log(error));
   };
 
   return (
