@@ -16,11 +16,8 @@
 
 ### Description
 
-- In this project implement for Motor, cars servicing. 
-- Customer/user can't take a service without login and login form also validation implemented, such as full
-  name is required, password must be 6 characters, need a uppercase (CAPITAL) and a special character (!@#$&\*).
+- This project was implemented for Motor, and car servicing. Here anyone can take a service. But you need to SignUp or log in first. The login form also validation implemented, such as a full name is required, the password must be 6 characters, need an uppercase (CAPITAL) and a unique character (!@#$&\*), etc. Everyone makes a booking and pays with SSLCommerz (payment gateway). SSLCommerz supports Master, Visa, Express card, and other online banking cards. And bKash, Rocket, Nogod, etc mobile banking. Anyone can contact with admin by using the contact form.
 - Implement user email verification enable
-
 - This project frontend start with Create-react-app (ReactJS)
 - Design by Tailwindcss with daisyUI Component
 - Backend start with NodeJS and ExpressJS
@@ -69,6 +66,7 @@
 - MongoDB (Atlas, Cluster) for database [Docs](https://cloud.mongodb.com/)
 - JWT (JSON Web Token) for authorization (npm i jsonwebtoken) [Docs](https://www.npmjs.com/package/jsonwebtoken)
 - SSLCommerz (npm i sslcommerz-lts) [Docs](https://github.com/nurulcse7/SSLCommerz-NodeJS)
+- Payment with SSLCommerz (bKash)
 
 #### Deploy (Hosting)
 - Deploy frontend in Firebase (Client) [Docs](https://console.firebase.google.com/)
